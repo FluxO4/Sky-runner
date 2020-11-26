@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2020-11-24T07:27:28.361Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36 Edg/87.0.664.41" etag="jfqq6kZfMyUhhA3QlJUz" version="13.10.1" type="github">
+<mxfile host="app.diagrams.net" modified="2020-11-26T04:16:36.679Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36 Edg/87.0.664.41" etag="O_alRcLgjD_oczi012yW" version="13.10.1" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="868" dy="492" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="599" dy="339" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
@@ -169,13 +169,13 @@
         <mxCell id="HSl5Rxi-4seKUBoj1wkB-67" value="&lt;b&gt;Chunk&amp;lt;T&amp;gt; (CK)&lt;/b&gt;&lt;br&gt;T [8][8] pixel values" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="30" y="670" width="117.5" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="HSl5Rxi-4seKUBoj1wkB-68" value="&lt;b&gt;(Static) Chunk Transformer (CT)&lt;/b&gt;&lt;br&gt;CK&amp;lt;int&amp;gt; [8][8] compression-weights&lt;br&gt;CK&amp;lt;float&amp;gt; DCT(CK&amp;lt;int&amp;gt; pixel value) [Discrete Cosine Transform]&lt;br&gt;CK&amp;lt;int&amp;gt; Compress(CKf&amp;lt;float&amp;gt; DCTresult, CK&amp;lt;int&amp;gt; weights)&lt;br&gt;CK&amp;lt;int&amp;gt; PixelValue(CK&amp;lt;int&amp;gt; compressed)" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="30" y="720" width="257.5" height="100" as="geometry" />
+        <mxCell id="HSl5Rxi-4seKUBoj1wkB-68" value="&lt;b&gt;(Static) Chunk Transformer (CT)&lt;/b&gt;&lt;br&gt;CK&amp;lt;int&amp;gt; [8][8] compression-weights&lt;br&gt;CK&amp;lt;float&amp;gt; DCT(CK&amp;lt;int&amp;gt; pixel value) [Discrete Cosine Transform]&lt;br&gt;CK&amp;lt;int&amp;gt; Compress(CKf&amp;lt;float&amp;gt; DCTresult, CK&amp;lt;int&amp;gt; weights)&lt;br&gt;CK&amp;lt;int&amp;gt; PixelValue(CK&amp;lt;int&amp;gt; compressed)&lt;br&gt;string ConvertToBinString(CK&amp;lt;int&amp;gt; compressed)" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="30" y="720" width="320" height="100" as="geometry" />
         </mxCell>
         <mxCell id="HSl5Rxi-4seKUBoj1wkB-70" value="&lt;b&gt;Heap&amp;lt;T&amp;gt; (HP)&lt;/b&gt;&lt;br&gt;(Standard binary heap)" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="30" y="830" width="127.5" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="HSl5Rxi-4seKUBoj1wkB-71" value="&lt;b&gt;HuffTree : Heap&amp;lt;HuffNode&amp;gt; (HT)&lt;/b&gt;&lt;br&gt;(Stores the huffman tree)&lt;br&gt;char GetItem(int binaryString)" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="HSl5Rxi-4seKUBoj1wkB-71" value="&lt;b&gt;HuffTree : Heap&amp;lt;HuffNode&amp;gt; (HT)&lt;/b&gt;&lt;br&gt;(Stores the huffman tree)&lt;br&gt;char GetItem(string binaryString)" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="30" y="880" width="217.5" height="50" as="geometry" />
         </mxCell>
         <mxCell id="HSl5Rxi-4seKUBoj1wkB-73" value="&lt;b&gt;HuffNode (HN)&lt;/b&gt;&lt;br&gt;char 8bitdata&lt;br&gt;int weight" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
@@ -183,6 +183,55 @@
         </mxCell>
         <mxCell id="HSl5Rxi-4seKUBoj1wkB-74" value="&lt;b&gt;(Static) Huffman Coder (HC)&lt;/b&gt;&lt;br&gt;bool Encode(out HT, out string, CK[])&lt;br&gt;bool Decode(out string, HT, CK[])" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="30" y="1000" width="257.5" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HSl5Rxi-4seKUBoj1wkB-81" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="HSl5Rxi-4seKUBoj1wkB-76" target="HSl5Rxi-4seKUBoj1wkB-89">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="280" y="575" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HSl5Rxi-4seKUBoj1wkB-76" value="Bitmap (bmp) file" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;size=20;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="220" y="530" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="HSl5Rxi-4seKUBoj1wkB-105" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="HSl5Rxi-4seKUBoj1wkB-89" target="HSl5Rxi-4seKUBoj1wkB-91">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HSl5Rxi-4seKUBoj1wkB-89" value="BMP" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="255" y="580" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="HSl5Rxi-4seKUBoj1wkB-106" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="HSl5Rxi-4seKUBoj1wkB-91" target="HSl5Rxi-4seKUBoj1wkB-96">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HSl5Rxi-4seKUBoj1wkB-91" value="CH Y, Cb, Cr" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="315" y="610" width="90.62" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="HSl5Rxi-4seKUBoj1wkB-104" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="HSl5Rxi-4seKUBoj1wkB-96" target="HSl5Rxi-4seKUBoj1wkB-98">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HSl5Rxi-4seKUBoj1wkB-96" value="For each CK ck" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="380.15" y="640" width="119.85" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="HSl5Rxi-4seKUBoj1wkB-101" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="HSl5Rxi-4seKUBoj1wkB-98" target="HSl5Rxi-4seKUBoj1wkB-100">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HSl5Rxi-4seKUBoj1wkB-98" value="CT.DCT(ck)" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="389.9200000000001" y="680" width="100.31" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="HSl5Rxi-4seKUBoj1wkB-108" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="HSl5Rxi-4seKUBoj1wkB-100">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="440.07500000000005" y="760" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HSl5Rxi-4seKUBoj1wkB-100" value="CT.Compress(ck)" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="375" y="720" width="130.15" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="HSl5Rxi-4seKUBoj1wkB-112" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="HSl5Rxi-4seKUBoj1wkB-109" target="HSl5Rxi-4seKUBoj1wkB-111">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HSl5Rxi-4seKUBoj1wkB-109" value="CK c_ck" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="400" y="760" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="HSl5Rxi-4seKUBoj1wkB-111" value="" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="380" y="800" width="120.15" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
